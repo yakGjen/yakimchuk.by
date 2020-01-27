@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+}
+
+.navigation {
+  width: 70%;
+  margin: 0 auto;
+  border-bottom: solid 1px #ffffff;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  justify-items: center;
+
+
+  &__link {
+    padding: 10px 0;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+}

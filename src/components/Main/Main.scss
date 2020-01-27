@@ -1,0 +1,10 @@
+.main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 5px;
+
+  &__img {
+    width: 20%;
+  }
+}
