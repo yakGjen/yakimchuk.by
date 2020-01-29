@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Main.scss';
-import img from '../../assets/my-photo.jpg';
 
 const Main = () => (
   <main className='main'>
-    <img 
-      src={img} 
-      alt='my'
-      className='main__img'
-    />
-    <p>
-      Main
-    </p>
+    <h1 className='main__header'>Evgeniy Yakimchuk</h1>
+    <p className='main__text'>Front-end developer</p>
+    <Link
+      to={'/summary'}
+      exact='false'
+      className='main__button'
+    >
+      To learn more
+    </Link>
   </main>
 );
 

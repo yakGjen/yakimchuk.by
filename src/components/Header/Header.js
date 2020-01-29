@@ -1,65 +1,54 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import './Header.scss';
 
 const Header = () => (
   <header className='header'>
     <nav className='navigation'>
-      <Link
+      <NavLink
         to={'/'}
-        exact='true'
+        exact
         className='navigation__link'
+        activeClassName='navigation__link_active'
       >
-        <li className='navigation__item'>
-          Welcome
-        </li>
-      </Link>
-      <Link
+        Welcome
+      </NavLink>
+      <NavLink
         to={'/summary'}
-        exact='false'
         className='navigation__link'
+        activeClassName='navigation__link_active'
       >
-        <li className='navigation__item'>
-          Summary
-        </li>
-      </Link>
-      <Link
+        Summary
+      </NavLink>
+      <NavLink
         to={'/skills'}
-        exact='false'
         className='navigation__link'
+        activeClassName='navigation__link_active'
       >
-        <li className='navigation__item'> 
-          Skills
-        </li>
-      </Link>
-      <Link
-        to={'/experience'}
-        exact='false'
+        Skills
+      </NavLink>
+      <NavLink
+        to={'/projects'}
         className='navigation__link'
+        activeClassName='navigation__link_active'
       >
-        <li className='navigation__item'>
-          Experience
-        </li>
-      </Link>
-      <Link
+        Projects
+      </NavLink>
+      <NavLink
         to={'/education'}
-        exact='false'
         className='navigation__link'
+        activeClassName='navigation__link_active'
       >
-        <li className='navigation__item'>
-          Education
-        </li>
-      </Link>
-      <Link
+        Education
+      </NavLink>
+      <NavLink
         to={'/contacts'}
-        exact='false'
         className='navigation__link'
+        activeClassName='navigation__link_active'
       >
-        <li className='navigation__item'>
-          Contacts
-        </li>
-      </Link>
+        Contacts
+      </NavLink>
     </nav>
   </header>
 );

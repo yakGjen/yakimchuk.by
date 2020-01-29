@@ -1,10 +1,27 @@
 .main {
   display: grid;
-  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  grid-gap: 5px;
+  align-items: center;
+  grid-gap: 15px;
 
-  &__img {
-    width: 20%;
+  &__header {
+    margin: 0;
+    font-size: 250%;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  &__button {
+    padding: 5px 25px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+    text-decoration: none;
   }
 }

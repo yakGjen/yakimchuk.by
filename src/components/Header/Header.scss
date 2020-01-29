@@ -12,13 +12,19 @@
   justify-items: center;
 
 
+  @media (max-width: 800px) {
+    width: 80%;
+  }
+
+
   &__link {
     padding: 10px 0;
     color: #ffffff;
     text-decoration: none;
   }
 
-  &__item {
-    list-style-type: none;
+  &__link_active {
+    font-weight: bold;
+    text-shadow: #ffffff 0 3px 10px;
   }
 }
