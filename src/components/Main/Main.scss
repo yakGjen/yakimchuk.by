@@ -1,4 +1,8 @@
+@import "../variables.scss";
+
 .main {
+  padding: 20px;
+
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
@@ -8,20 +12,26 @@
   &__header {
     margin: 0;
     font-size: 250%;
+    font-weight: normal;
+    text-align: center;
   }
 
   &__text {
     margin: 0;
     font-size: 150%;
-    font-weight: bold;
+    // font-weight: bold;
   }
 
   &__button {
     padding: 5px 25px;
     box-sizing: border-box;
     border-radius: 20px;
-    border: solid 1px #ffffff;
-    color: #ffffff;
+    border: solid 1px $primary;
+    color: $primary;
     text-decoration: none;
+
+    &:hover {
+      box-shadow: $primary $shadow;
+    }
   }
 }

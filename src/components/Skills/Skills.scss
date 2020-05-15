@@ -1,6 +1,54 @@
+@import "../variables.scss";
+
 .skills {
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+
+  align-self: start;
+
+  @media (max-width: 580px) {
+    padding: 70px 50px 0 50px;
+  }
+
+  @media (max-width: $skills-breackpoint) {
+    padding: 70px 30px 0 30px;
+  }
+
+  &__header {
+    margin: 0;
+    font-size: 120%;
+    text-decoration: underline;
+
+    @media (max-width: 500px) {
+      padding: 5px 10px;
+      border: solid 1px $primary;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    @media (max-width: 580px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $skills-breackpoint) {
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
   &__skill {
-    margin: 5px;
+    margin: 5px 15px;
     font-size: 130%;
   }
+}
+
+.show-skills-section {
+  height: auto;
 }

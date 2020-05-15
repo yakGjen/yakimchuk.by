@@ -14,16 +14,12 @@ const Summary = () => (
       Hello!
     </p>
     <p className='summary__text'>
-      My name is Evgeniy Yakimchuk. I studied front-end development at
-Educational Center of Hi-Tech Park. The final project was the game “Tennis” with
-saving data on a server with AJAX. Then, I was an intern in the project “subbotnik.by”.
-My task was to write autotests using the Protractor framework. After the internship, I
-began to study Angular and apply new knowledge and skills in the project “Home
-Accounting”. I also started learning English and improving JS knowledge. After that, I
-joined the online front-end web development course of the Rolling Scopes School.
-During this course, I made a lot of projects such as Piskel Clone, Youtube Client, Chat,
-and landing markup. I have finished this training so far. Since June 2019, I have been
-working as a freelance developer.
+    Hello! My name is Evgeniy Yakimchuk. I'm a Frontend developer with more than 2 years of well-rounded experience.
+Hardworking person who is attentive to details and focused on quality of work.
+Like to learn the latest technologies and continuously improves myself, always try to help other team members.
+Conflict-free and stress resistant enough. I am not afraid of taking responsibility. Capable of managing my part of a project from start to finish. I always strive to deliver my work on time and enjoy building pixel-perfect UI.
+My enthusiasm and knowledge of JavaScript will help me to create the product that will meet the best expectations.
+
     </p>
   </main>
 );

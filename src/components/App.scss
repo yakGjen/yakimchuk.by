@@ -1,4 +1,5 @@
 @import "~normalize.css";
+@import "./variables.scss";
 
 .App {
   max-width: 2000px;
@@ -10,8 +11,9 @@
   justify-items: center;
   align-items: center;
 
-  background-image: url('../assets/main-background.jpg');
+  background-image: url('../assets/tree.jpg');
   background-size: 100% 100%;
 
-  color: #ffffff;
+  color: $primary;
+  font-family: 'Roboto', sans-serif;
 }

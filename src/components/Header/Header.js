@@ -1,56 +1,57 @@
-import React from 'react';
-import { NavLink } from "react-router-dom";
+import React, {Component} from 'react';
+import NavItem from './NavItem/NavItem';
 
 import './Header.scss';
 
-const Header = () => (
-  <header className='header'>
-    <nav className='navigation'>
-      <NavLink
-        to={'/'}
-        exact
-        className='navigation__link'
-        activeClassName='navigation__link_active'
-      >
-        Welcome
-      </NavLink>
-      <NavLink
-        to={'/summary'}
-        className='navigation__link'
-        activeClassName='navigation__link_active'
-      >
-        Summary
-      </NavLink>
-      <NavLink
-        to={'/skills'}
-        className='navigation__link'
-        activeClassName='navigation__link_active'
-      >
-        Skills
-      </NavLink>
-      <NavLink
-        to={'/projects'}
-        className='navigation__link'
-        activeClassName='navigation__link_active'
-      >
-        Projects
-      </NavLink>
-      <NavLink
-        to={'/education'}
-        className='navigation__link'
-        activeClassName='navigation__link_active'
-      >
-        Education
-      </NavLink>
-      <NavLink
-        to={'/contacts'}
-        className='navigation__link'
-        activeClassName='navigation__link_active'
-      >
-        Contacts
-      </NavLink>
-    </nav>
-  </header>
-);
+const nav = [
+  {name: 'Welcome', to: '/'},
+  {name: 'Summary', to: '/summary'},
+  {name: 'Skills', to: '/skills'},
+  {name: 'Projects', to: '/projects'},
+  {name: 'Education', to: '/education'},
+  {name: 'Contacts', to: '/contacts'}
+];
+
+class Header extends Component {
+  state = {
+    showMenu: false,
+  }
+
+  toogleMobileMenu = () => {
+    this.setState({showMenu: !this.state.showMenu});
+  }
+
+  closeMobileMenu = () => {
+    this.setState({showMenu: false});
+  }
+
+  render() {
+    return (
+      <header className='header'>
+        <button 
+          className='header__mobile-btn'
+          onClick={this.toogleMobileMenu}
+        >
+          <i className="fas fa-bars"></i>
+        </button>
+        
+        <nav 
+          className={`navigation ${this.state.showMenu ? 'show-nav' : null}`}
+          onClick={this.closeMobileMenu}
+        >
+          {nav.map((item, i) => {
+            return (<NavItem 
+                    name={item.name} 
+                    to={item.to} 
+                    cls='navigation__link'
+                    activeCls='navigation__link_active'
+                    key={i}
+                  />);
+          })}
+        </nav>
+      </header>
+    );
+  }
+}
 
 export default Header;
