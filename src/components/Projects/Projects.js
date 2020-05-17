@@ -64,7 +64,7 @@ const Projects = () => (
   <main className='projects'>
     {myProjects.map((item, i) => {
       return (
-        <article className='card'>
+        <article className='card' key={i}>
           <img src={item.img} alt='project-img' className='card__img' />
           <h3 className='card__header'>{item.name}</h3>
           <a 
