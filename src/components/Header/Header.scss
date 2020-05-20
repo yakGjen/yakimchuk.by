@@ -16,7 +16,7 @@
       margin: 20px;
       z-index: 10;
       // position: relative;
-      position: absolute;
+      position: fixed;
     }
 
     i {
@@ -40,7 +40,7 @@
   }
 
   @media (max-width: 580px) {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     right: 0;

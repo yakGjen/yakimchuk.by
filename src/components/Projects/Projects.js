@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import './Projects.scss';
 import cultureHome from '../../assets/projects/culture/home.jpg';
@@ -60,24 +60,60 @@ const myProjects = [
   }
 ];
 
-const Projects = () => (
-  <main className='projects'>
-    {myProjects.map((item, i) => {
-      return (
-        <article className='card' key={i}>
-          <img src={item.img} alt='project-img' className='card__img' />
-          <h3 className='card__header'>{item.name}</h3>
-          <a 
-            href={item.href}
-            target='_blank'
-            className='card__button'
-          >
-            see more
-          </a>
-        </article>
-      );
-    })}
-  </main>
-);
+class Projects extends Component {
+  state = {
+    showUpButton: false
+  }
+
+  handleScroll = () => {
+    const scroolTop = window.pageYOffset;
+    if (scroolTop > 150) {
+      this.setState({showUpButton: true});
+    } else {
+      this.setState({showUpButton: false});
+    }
+  }
+
+  runToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  componentDidMount() {
+    document.onscroll = this.handleScroll;
+  }
+
+  componentWillUnmount() {
+    document.onscroll = null;
+  }
+
+  render() {
+    return (
+      <main className='projects'>
+        {myProjects.map((item, i) => {
+          return (
+            <article className='card' key={i}>
+              <img src={item.img} alt='project-img' className='card__img' />
+              <h3 className='card__header'>{item.name}</h3>
+              <a 
+                href={item.href}
+                target='_blank'
+                className='card__button'
+              >
+                see more
+              </a>
+            </article>
+          );
+        })}
+        <button
+          className={`up-btn ${this.state.showUpButton ? 'up-btn__show' : null}`}
+          onClick={this.runToTop}
+        ><i className="fas fa-chevron-up"></i></button>
+      </main>
+    );
+  }
+}
 
 export default Projects;
