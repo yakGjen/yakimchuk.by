@@ -1,0 +1,139 @@
+@import "../../variables.scss";
+
+$modal-vertical-breackpoint: 700px;
+
+.modal {
+  width: 80%;
+  height: 80vh;
+  max-height: 600px;
+
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-template-columns: 1fr;
+  gap: 0;
+
+  background: #ffffff;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  outline: none;
+
+  @media (max-width: $modal-vertical-breackpoint) {
+    grid-template-columns: 1fr;
+    /*grid-template-rows: 1fr auto;*/
+    font-size: 80%;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  border: none;
+  background: none;
+  text-shadow: $shadow;
+  cursor: pointer;
+  outline: none;
+
+  @media (max-width: $modal-vertical-breackpoint) {
+    top: 35px;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    top: 5px !important;
+    right: 5px !important;
+    color: #000000 !important;
+  }
+
+  @media (max-width: 570px) {
+    top: 5px;
+    right: 5px;
+    color: #ffffff;
+  }
+}
+
+.img-wrap {
+  display: grid;
+  align-items: center;
+  background: #000000;
+
+  border-radius: $border-radius 0 0 $border-radius;
+
+  @media (max-width: $modal-vertical-breackpoint) {
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    height: inherit !important;
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $modal-vertical-breackpoint) {
+    padding: 20px 50px;
+    box-sizing: border-box;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    padding: 10px;
+  }
+
+  &__header {
+    margin: 0;
+    text-align: center;
+    line-height: 1em;
+
+    @media (max-width: $modal-vertical-breackpoint) {
+      margin-bottom: 20px;
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__environment-header {
+    margin: 0;
+
+    @media (max-width: $modal-vertical-breackpoint) {
+      text-align: center;
+    }
+  }
+
+  &__environment-item {
+    margin: 5px 0;
+  }
+
+  &__button {
+    padding: 8px 30px;
+    border-radius: $border-radius;
+    text-decoration: none;
+    color: $primary;
+    box-shadow: $shadow;
+    cursor: pointer;
+    outline: none;
+  }
+}

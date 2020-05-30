@@ -73,6 +73,9 @@
     border: solid 1px $primary;
     color: $primary;
     text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
   }
 }
 
